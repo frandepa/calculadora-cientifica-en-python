@@ -1,0 +1,48 @@
+<doctypehtml!>
+<html>
+    <head>
+        <tittle>este es un codigo de una calculadora cientifica</tittle>
+        <link rel="stylesheet" href="estilo.css"/>
+    </head>
+    <body>
+        <h1>
+            a continuacion el codigo en python
+        </h1>
+        <br>
+        <p>
+            from sympy import symbols, sin, cos, tan, sqrt, log, exp, pi, parse_expr
+
+            def calculadora_cientifica():
+                x = symbols('x')
+            
+                print("Calculadora Científica")
+                print("Operaciones disponibles: +, -, *, /, sin, cos, tan, sqrt, log, exp, pi")
+                print("Ingrese 'salir' para salir")
+            
+                while True:
+                    expresion = input("Ingrese una expresión: ")
+            
+                    if expresion.lower() == 'salir':
+                        print("Saliendo de la calculadora.")
+                        break
+            
+                    try:
+                        expresion_parsed = parse_expr(expresion)
+                        resultado = expresion_parsed.evalf(subs={x: 0})  # Para evaluar en x=0, puedes cambiar el valor según tus necesidades
+                        print("Resultado:", resultado)
+                    except Exception as e:
+                        print("Error:", e)
+            
+            if __name__ == "__main__":
+                calculadora_cientifica() 
+        </p>
+        <br>
+        <h3>
+            para su uso tiene que instalar un libreria con el siguiente condigo pip install sympy
+        </h3>
+        <br>
+        <p>
+            en  la consola se utiliza el codigo
+        </p>
+    </body>
+</html>
